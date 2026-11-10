@@ -3,13 +3,12 @@
 
 ## توزيع الشغل
 | العضو | الملفات (js/pages/) |
-|---|---|
-| الأول | index.js, about.js |
-| الثاني | services.js, service-details.js |
-| الثالث | service-request.js, my-requests.js |
-| الرابع | register.js, login.js (Firebase Authentication) |
-| الخامس | contact.js, faq.js, وملف js/bot.js (الروبوت) |
-| القائد | data.js, core.js, boot.js, css/colors.css |
+|---|---|العضو	الملفات
+الأول (القائد)	index.js وabout.js + الملفات المشتركة: data.js وcore.js وboot.js وcss/colors.css
+الثاني	services.js وservice-details.js
+الثالث	service-request.js وmy-requests.js
+الرابع	register.js وlogin.js (Firebase Authentication)
+الخامس	contact.js وfaq.js وjs/bot.js (الروبوت)
 
 ## القواعد
 1. عدّل في ملفاتك بس. محتاج تغيير في ملف مشترك؟ كلّم القائد.
