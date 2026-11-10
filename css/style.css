@@ -1,0 +1,94 @@
+/* Peerly - style.css: كل الألوان من colors.css بس (var) */
+*{box-sizing:border-box;margin:0}
+body{font-family:'Segoe UI',Tahoma,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;transition:background .3s,color .3s}
+a{color:var(--brand);text-decoration:none}
+.wrap{max-width:1100px;margin:auto;padding:0 20px}
+section{padding:50px 0}
+h2{margin-bottom:18px}
+
+/* الهيدر */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;gap:12px;padding:10px 20px;max-width:1100px;margin:auto}
+.logo{font-weight:800;font-size:1.5rem;color:var(--brand)}
+.logo b{color:var(--lime)}
+nav{display:flex;gap:4px;margin-inline-start:auto;flex-wrap:wrap}
+nav a{padding:5px 12px;border-radius:20px;color:var(--text);font-size:.93rem}
+nav a:hover,nav a.on{background:var(--brand);color:var(--white)}
+.ico{border:1px solid var(--line);background:var(--surface);color:var(--text);border-radius:20px;padding:5px 12px;cursor:pointer;font-size:1rem}
+#menu{display:none}
+@media(max-width:860px){#menu{display:block}nav{display:none;width:100%;order:5;flex-direction:column}nav.open{display:flex}.bar{flex-wrap:wrap}}
+
+/* الهيرو: خلفية متحركة + إيموجي عائم */
+.hero{position:relative;overflow:hidden;background:var(--charcoal);color:var(--white);padding:70px 0;text-align:center}
+.hero::before,.hero::after{content:"";position:absolute;width:320px;height:320px;border-radius:50%;filter:blur(70px);opacity:.45;animation:drift 9s ease-in-out infinite alternate}
+.hero::before{background:var(--teal);top:-100px;inset-inline-start:-80px}
+.hero::after{background:var(--lime);bottom:-120px;inset-inline-end:-60px;animation-delay:-4s}
+.hero .wrap{position:relative;z-index:1}
+.big{font-size:4rem;animation:float 3s ease-in-out infinite}
+.hero h1{font-size:clamp(1.8rem,5vw,3rem)}
+.hero p{color:var(--on-dark-muted);max-width:620px;margin:10px auto 0}
+@keyframes drift{to{transform:translate(60px,40px) scale(1.2)}}
+@keyframes float{50%{transform:translateY(-12px)}}
+
+/* الكروت والأزرار */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;transition:transform .25s,box-shadow .25s}
+.card:hover{transform:translateY(-5px);box-shadow:0 12px 28px color-mix(in srgb,var(--charcoal) 18%,transparent)}
+.em{font-size:2.4rem}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--brand);color:var(--white);padding:10px 22px;border-radius:24px;font:inherit;font-weight:600}
+.btn.lime{background:var(--lime);color:var(--on-lime)}
+.btn:hover{filter:brightness(1.1)}
+.tag{background:var(--lime);color:var(--on-lime);border-radius:12px;padding:2px 10px;font-size:.8rem}
+.price{color:var(--brand);font-weight:800;font-size:1.1rem}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--text);padding:6px 14px;border-radius:20px;cursor:pointer;font:inherit}
+.chip.on{background:var(--brand);color:var(--white)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;text-align:center}
+.stats b{font-size:2.2rem;color:var(--brand);display:block}
+.cta{background:var(--charcoal);color:var(--white);text-align:center;border-radius:20px;padding:40px 20px}
+.cta p{color:var(--on-dark-muted);margin:8px 0 16px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+
+/* الفورم */
+.form{max-width:520px;margin:auto}
+.f{margin-bottom:14px}
+.f label{display:block;font-weight:600;margin-bottom:4px}
+input,select,textarea{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--text);font:inherit}
+input:focus,select:focus,textarea:focus,button:focus-visible{outline:2px solid var(--teal)}
+.err{color:var(--error);font-size:.85rem;min-height:1.2em}
+.ok{background:var(--lime);color:var(--on-lime);padding:14px;border-radius:12px;margin-top:14px}
+.ok.bad{background:var(--error);color:var(--white)}
+details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+footer{background:var(--charcoal);color:var(--on-dark-muted);padding:30px 0;text-align:center}
+footer a{color:var(--teal);margin:0 8px;display:inline-block}
+
+/* الروبوت ثلاثي الأبعاد + الشات */
+#bot{position:fixed;bottom:20px;inset-inline-end:20px;z-index:30;perspective:500px;cursor:pointer;border:0;background:none;padding:14px}
+.head{width:62px;height:54px;background:linear-gradient(135deg,var(--teal),var(--brand));border-radius:18px;position:relative;transform:rotateY(var(--ry,0deg)) rotateX(var(--rx,0deg));box-shadow:0 10px 20px color-mix(in srgb,var(--charcoal) 40%,transparent);animation:float 2.5s infinite}
+.head::before{content:"";position:absolute;top:-14px;left:29px;width:4px;height:14px;background:var(--lime)}
+.head i{position:absolute;top:18px;width:12px;height:12px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime);animation:blink 4s infinite}
+.head i:nth-child(1){left:14px}
+.head i:nth-child(2){right:14px}
+@keyframes blink{96%,100%{transform:scaleY(1)}98%{transform:scaleY(.1)}}
+#chat{position:fixed;bottom:110px;inset-inline-end:20px;width:min(340px,92vw);height:420px;background:var(--bg);border:1px solid var(--line);border-radius:18px;display:none;flex-direction:column;z-index:30;box-shadow:0 16px 40px color-mix(in srgb,var(--charcoal) 35%,transparent)}
+#chat.open{display:flex}
+.chead{background:var(--brand);color:var(--white);padding:12px;border-radius:18px 18px 0 0;font-weight:700}
+#msgs{flex:1;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.m{padding:8px 12px;border-radius:14px;max-width:85%;background:var(--surface)}
+.m.me{background:var(--brand);color:var(--white);align-self:flex-end}
+.sug{padding:0 12px 8px;display:flex;gap:6px;flex-wrap:wrap}
+#chat form{display:flex;gap:6px;padding:10px;border-top:1px solid var(--line)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+
+/* ===== CSS خاص بكل عضو: اكتب تحت اسمك بس ===== */
+/* العضو الأول */
+
+/* العضو الثاني */
+
+/* العضو الثالث */
+
+/* العضو الرابع */
+
+/* العضو الخامس */
