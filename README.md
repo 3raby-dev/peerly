@@ -4,10 +4,15 @@
 ## توزيع الشغل
 | العضو | الملفات (js/pages/) |
 |---|---|العضو	الملفات
+
 الأول (القائد)	index.js وabout.js + الملفات المشتركة: data.js وcore.js وboot.js وcss/colors.css
+
 الثاني	services.js وservice-details.js
-الثالث	service-request.js وmy-requests.js
+
+الثالث	service-reques
+t.js وmy-requests.js
 الرابع	register.js وlogin.js (Firebase Authentication)
+
 الخامس	contact.js وfaq.js وjs/bot.js (الروبوت)
 
 ## القواعد
