@@ -9,8 +9,8 @@
 
 الثاني	services.js وservice-details.js
 
-الثالث	service-reques
-t.js وmy-requests.js
+الثالث	service-request.js وmy-requests.js
+
 الرابع	register.js وlogin.js (Firebase Authentication)
 
 الخامس	contact.js وfaq.js وjs/bot.js (الروبوت)
